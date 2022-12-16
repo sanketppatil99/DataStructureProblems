@@ -9,23 +9,26 @@ namespace DataStructure
 {
     public class LinkedList
     {
-        internal Node head;
 
+        internal Node head;       
 
-        public void AddInReverseOrder(int data)
+        public void Append(int data)
         {
-            Node newNode = new Node(data);
-            if (this.head == null)
+            Node node = new Node(data);
+            if (head == null)
             {
-                this.head = newNode;
+                head = node;
             }
             else
             {
-                Node temp = this.head;
-                head = newNode;
-                head.next = temp;
+                Node node1 = head;
+                while (node1.next != null)
+                {
+                    node1 = node1.next;
+                }
+                node1.next = node;
             }
-            Console.WriteLine("{0} inserted into linked list  ", newNode.data);
+            Console.WriteLine("{0} inserted into Linked List ", node.data);
         }
         internal void Display()
         {

@@ -5,13 +5,10 @@
     {
         public static void Main(string[] args)
         {
-           
-
-
             LinkedList list = new LinkedList();
-            list.AddInReverseOrder(70);
-            list.AddInReverseOrder(30);
-            list.AddInReverseOrder(56);
+            list.Append(56);
+            list.Append(30);
+            list.Append(70);
             list.Display();
         }
     }
