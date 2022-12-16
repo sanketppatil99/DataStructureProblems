@@ -9,8 +9,6 @@ namespace DataStructure
 {
     public class LinkedList
     {
-
-
         internal Node head;
 
         internal void Add(int data)
@@ -28,25 +26,26 @@ namespace DataStructure
                     temp = temp.next;
                 }
                 temp.next = node;
-
-
             }
-
             Console.WriteLine("{0} inserted into Linked List ", node.data);
-        }
-       
-        public Node Pop()
+        }     
+        public Node PopLast()
         {
-            Node node = head;
             if (head == null)
             {
                 Console.WriteLine("Linked List is Empty");
+                return null;
             }
             else
             {
-                head = head.next;
+                Node n = head;
+                while (n.next.next != null)
+                {
+                    n = n.next;
+                }
+                n.next = null;
+                return n;
             }
-            return node;
         }
 
         internal void Display()
@@ -63,5 +62,6 @@ namespace DataStructure
                 temp = temp.next;
             }
         }
+
     }
 }
