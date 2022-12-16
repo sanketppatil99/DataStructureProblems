@@ -10,7 +10,7 @@ namespace DataStructure
     public class LinkedList
     {
 
-        
+
         internal Node head;
 
         internal void Add(int data)
@@ -35,38 +35,20 @@ namespace DataStructure
             Console.WriteLine("{0} inserted into Linked List ", node.data);
         }
        
-        public void InsertNode(int position, int data)
+        public Node Pop()
         {
-            var newnode = new Node(data);
-
-            newnode.data = data;
-            newnode.next = this.head;
-            if (position < 1)
+            Node node = head;
+            if (head == null)
             {
-                Console.WriteLine("invalid data");
-            }
-            if (position == 1)
-            {
-                newnode.next = this.head;
-                head = newnode;
+                Console.WriteLine("Linked List is Empty");
             }
             else
             {
-                Node node1 = new Node(data);
-                node1 = this.head;
-
-                while (position > 2)
-                {
-                    node1 = node1.next;
-                    position--;
-                }
-
-                newnode.next = node1.next;
-                node1.next = newnode;
-
+                head = head.next;
             }
+            return node;
         }
-        
+
         internal void Display()
         {
             Node temp = this.head;
@@ -81,7 +63,5 @@ namespace DataStructure
                 temp = temp.next;
             }
         }
-
-
     }
 }
